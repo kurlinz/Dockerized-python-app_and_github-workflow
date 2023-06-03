@@ -12,6 +12,7 @@ Prepare the Dockerfile, which can be used to build the container. Provide inform
 2. Python Flask Application
 3. Build the docker image and push to Docker Hub
 4. Deploy the application using Docker
+5. Prepare the CI process with github workflow.
 
 ## Requirements
 1. VS code
@@ -127,6 +128,72 @@ Verify
 
               docker ps
 
+
+## Step 5: Prepare the CI process with github workflow.
+
+i. Set-up the repository on GitHub.
+
+ii. Define the GitHub Actions workflow.
+
+iii. Test the workflow.
+
+### i. Set-up repository on GitHub.
+
+Using our existing repository containing working Dockerfile, we would configure the docker hub secretes.
+
+* Open the repository Settings, and go to Secrets and variables > Actions.
+
+* Create a new secret named DOCKERHUB_USERNAME and your Docker ID as value.
+
+* Create a new Personal Access Token (PAT) for Docker Hub. You can name this token clockboxci.
+
+* Add the PAT as a second secret in your GitHub repository, with the name DOCKERHUB_TOKEN.
+
+
+### ii. Define the GitHub Actions workflow.
+
+```
+name: GithubCI
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - 1.*
+  schedule:
+    - cron: '0,30 19 * * 6'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      -
+        name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+```
+
+
+* Select Commit changes... and push the changes to the main branch.
+
+* After pushing the commit, the workflow starts at the schedukled time at 7pm and 7:30pm every saturday.
 
 
 
