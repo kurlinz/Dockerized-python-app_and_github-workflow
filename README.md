@@ -1,7 +1,7 @@
 # python-app
 Part of assessment for interview
 
-#TASK 1:
+#TASK 1:n/
 I. Build a container image, and push it into a registry
 II. Create a Hello World Python Flask application with an endpoint (you can copy-paste example code from Flask documentation)
 Prepare the Dockerfile, which can be used to build the container. Provide information how to build the image locally (with Docker/Podman) and run the container
