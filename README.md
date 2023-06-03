@@ -190,10 +190,23 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
 ```
 
+* name: the name of this workflow.
+* on.push.branches: specifies that this workflow should run on every push event for the branches in the list.
+* jobs: creates a job ID (build) and declares the type of machine that the job should run on.
+* on.schedule: to define a time schedule for your workflows. You can schedule a workflow to run at specific UTC times,The shortest interval you can run scheduled workflows is once every 5 minutes.
+* tags: filter when you want to include tag name patterns or when you want to both include and exclude tag names patterns.
 
-* Select Commit changes... and push the changes to the main branch.
+The with key lists a number of input parameters that configures the step:
 
-* After pushing the commit, the workflow starts at the schedukled time at 7pm and 7:30pm every saturday.
+* context: the build context.
+* file: filepath to the Dockerfile.
+* push: tells the action to upload the image to a registry after building it.
+* tags: tags that specify where to push the image.
+
+
+Select Commit changes... and push the changes to the main branch.
+
+After pushing the commit, the workflow starts at the schedukled time at 7pm and 7:30pm every saturday.
 
 
 
