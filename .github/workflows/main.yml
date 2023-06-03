@@ -4,10 +4,8 @@ on:
   push:
     branches:
       - "main"
-    tags:
-      - 1.*
   schedule:
-    - cron: '0 19 * * 6' 
+    - cron: '0 19 * * 6' ## Run every Saturday at 7 PM UTC
 
 jobs:
   build:
