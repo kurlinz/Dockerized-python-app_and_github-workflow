@@ -7,7 +7,7 @@ on:
     tags:
       - 1.*
   schedule:
-    - cron: '0,30 19 * * 6'
+    - cron: '0 19 * * 6' 
 
 jobs:
   build:
