@@ -1,9 +1,9 @@
-# TASK 1: Containers + CI/CD + Configuration Management
+# RECRUITMENT ASSESSMENT 
 
-## PART 1
-1. Build a container image, and push it into a registry
-2. Create a Hello World Python Flask application with an endpoint (you can copy-paste example code from Flask documentation)
-Prepare the Dockerfile, which can be used to build the container. Provide information how to build the image locally (with Docker/Podman) and run the container
+## TASK 1: Build a container image, and push it into a registry
+
+1. Create a Hello World Python Flask application with an endpoint (you can copy-paste example code from Flask documentation)
+2. Prepare the Dockerfile, which can be used to build the container. Provide information how to build the image locally (with Docker/Podman) and run the container
 3. Prepare CI process (GitHub Workflows/Gitlab CI), which builds the container image, and pushes it to a registry (e.g. Docker Hub, Quay.io, GitHub Container Registry). The CI should be run on push to main branch, and periodically on Saturday at 7 PM (push an image with the latest tag)
 
 
