@@ -1,4 +1,4 @@
-# RECRUITMENT ASSESSMENT: Containers + CI/CD 
+# Recruitmemt Assignment: Containers + CI/CD 
 
 ## TASK 1: Build a container image, and push it into a registry
 
