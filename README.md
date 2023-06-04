@@ -12,7 +12,8 @@
 2. Python Flask Application
 3. Build the docker image and push to Docker Hub
 4. Deploy the application using Docker
-5. Prepare the CI process with github workflow.
+5. commit and push everything back to git repository.
+6. Prepare the CI process with github workflow.
 
 ## Requirements
 1. VS code
@@ -128,8 +129,27 @@ Verify
 
               docker ps
 
+## Step 5: commit and push everything back to git repository.
 
-## Step 5: Prepare the CI process with github workflow.
+
+First, we execute
+            
+            
+            git add .
+           
+            
+Commit code with a message for reference 
+           
+           
+             git commit -m "updating repository"
+             
+push back to repository
+          
+          
+            git push git@github.com:kurlinz/python-app.git
+           
+
+## Step 6: Prepare the CI process with github workflow.
 
 i. Set-up the repository on GitHub.
 
