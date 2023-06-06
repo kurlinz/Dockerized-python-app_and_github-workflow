@@ -165,7 +165,7 @@ Using our existing repository containing working Dockerfile, we would configure 
 
 * Create a new secret named DOCKERHUB_USERNAME and your Docker ID as value.
 
-* Create a new Personal Access Token (PAT) for Docker Hub. You can name this token clockboxci.
+* Create a new Personal Access Token (PAT) for Docker Hub. You can name it anything.
 
 * Add the PAT as a second secret in your GitHub repository, with the name DOCKERHUB_TOKEN.
 
