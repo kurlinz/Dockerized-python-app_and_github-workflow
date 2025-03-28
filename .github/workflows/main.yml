@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - "main"
-  schedule:
-    - cron: '0 19 * * 6' ## Run every Saturday at 7 PM UTC
-
 jobs:
   build:
     runs-on: ubuntu-latest
